@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="To Do List app to list down your every day's to dos for better productivity.">
+  <meta name="keywords" content="To Do List App, To Do App, JavaScript, JS, Javascript, CRUD Application.">
+  <title>To Do Lists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <div class="to-do__wrapper">
+      <h1>My To Dos</h1>
+      <div class="to-do__add-wrapper">
+        <div class="to-do__input-wrapper">
+          <label for="new-todo" class="sr-only">New To Do</label>
+          <input type="text" name="add-input" id="new-todo" placeholder="Enter your to do">
+        </div>
+        <button type="button" class="add-btn">Add</button>
+      </div>
+      <div class="to-do__lists"></div>
+    </div>
+  </main>
+  <script defer src="script.js"></script>
+</body>
+</html>
