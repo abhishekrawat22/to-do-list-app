@@ -1,0 +1,199 @@
+:root {
+    --theme-color: #2D36DF;
+    --theme-color-secondary: #1E88E5;
+    --white: #fff;
+    --black: #000;
+    --box-shadow: #dbdbdb;
+    --placeholder: #777777;
+    --font-family: 'Poppins', sans-serif;
+    --error: 211 47 47;
+    --bg-edit: #4CAF50;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--white);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 3rem 1.5rem;
+}
+
+h1 {
+    animation: moveUp 0.5s linear forwards;
+    color: var(--theme-color);
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 0;
+    opacity: 0;
+    padding: 1.5rem 1.5rem 0;
+    text-align: center;
+}
+
+p {
+    margin: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 0.1rem;
+    height: 0.1rem;
+    padding: 0;
+    margin: -0.1rem;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+input {
+    background-color: var(--box-shadow);
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    padding: 1.75rem 1rem;
+}
+
+input::placeholder {
+    color: var(--placeholder);
+}
+
+button {
+    all: unset;
+    border: none;
+    border-radius: 0.8rem;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.15rem 2rem;
+    transition: box-shadow 0.4s;
+}
+
+.to-do__wrapper {
+    margin: auto;
+    max-width: 70rem;
+    width: 100%;
+}
+
+.to-do__add-wrapper {
+    align-items: start;
+    animation: moveUp 0.5s 0.5s linear forwards;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    opacity: 0;
+    padding: 2rem 0;
+}
+
+.to-do__input-wrapper,
+input[type="text"],
+.list {
+    width: 100%;
+}
+
+.to-do__input-wrapper {
+    display: flex;
+    padding-bottom: 2.75rem;
+    position: relative;
+}
+
+.error::after {
+    bottom: 0;
+    color: rgb(var(--error));
+    content: '* This field is required';
+    font-size: 1.4rem;
+    position: absolute;
+}
+
+.error input {
+    border-color: rgb(var(--error));
+    box-shadow: 0 0 0.7rem 0.2rem rgb(var(--error));
+}
+
+.add-btn {
+    background-color: var(--theme-color);
+}
+
+.add-btn:hover,
+.add-btn:focus {
+    box-shadow: 0 0rem 0.7rem 0.2rem var(--theme-color-secondary);
+}
+
+.edit-btn {
+    background-color: var(--bg-edit);
+}
+
+.edit-btn:hover,
+.edit-btn:focus {
+    box-shadow: 0 0rem 0.7rem 0.2rem var(--bg-edit);
+}
+
+.delete-btn {
+    background-color: rgb(var(--error));
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+    box-shadow: 0 0rem 0.7rem 0.2rem rgb(var(--error));
+}
+
+.to-do__lists {
+    animation: moveUp 0.5s 1s linear forwards;
+    display: grid;
+    gap: 2rem;
+    opacity: 0;
+}
+
+.to-do__list {
+    align-items: center;
+    animation: moveUp 0.5s linear forwards;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.list {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.4);
+}
+
+.list label {
+    color: var(--black);
+    font-size: 1.6rem;
+    word-break: break-all;
+}
+
+.list label:focus {
+    outline: none;
+}
+
+.list input:checked+label {
+    text-decoration: line-through;
+}
+
+@keyframes moveUp {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
