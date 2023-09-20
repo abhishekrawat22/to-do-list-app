@@ -17,13 +17,6 @@ addBtn.addEventListener('click', () => {
         listInputWrap.classList.add('list');
         listItem.appendChild(listInputWrap);
 
-        // let inputField = document.createElement('input');
-        // inputField.setAttribute('type', 'text');
-        // inputField.setAttribute('name', 'list');
-        // inputField.setAttribute('id', `input${i}`);
-        // listInputWrap.appendChild(inputField);
-        // i++;
-
         let inputField = document.createElement('input');
         inputField.setAttribute('type', 'checkbox');
         inputField.setAttribute('name', 'list');
@@ -31,7 +24,6 @@ addBtn.addEventListener('click', () => {
         listInputWrap.appendChild(inputField);
 
         let labelEle = document.createElement('label');
-        // labelEle.setAttribute('for', `input${i}`);
         labelEle.textContent = newTodo.value;
         listInputWrap.appendChild(labelEle);
         inputField.value = labelEle.textContent;
