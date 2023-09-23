@@ -162,13 +162,14 @@ input[type="text"],
 }
 
 .list {
-    align-items: center;
+    align-items: start;
     display: flex;
     gap: 1rem;
 }
 
 input[type="checkbox"] {
     cursor: pointer;
+    margin-top: 0.65rem;
     transform: scale(1.4);
 }
 
@@ -176,7 +177,7 @@ input[type="checkbox"] {
     color: var(--black);
     cursor: text;
     font-size: 1.6rem;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .list label:focus {
@@ -196,5 +197,11 @@ input[type="checkbox"] {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .to-do__list {
+        flex-wrap: wrap;
     }
 }
