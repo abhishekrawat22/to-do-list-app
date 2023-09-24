@@ -5,7 +5,7 @@ let listWrapper = document.querySelector(".to-do__lists");
 let deleteBtn = document.querySelectorAll('.delete-btn');
 let i = 1;
 
-addBtn.addEventListener('click', () => {
+const createList = () => {
     if (newTodo.value != '') {
         inputWrapper.classList.remove('error');
 
@@ -50,5 +50,15 @@ addBtn.addEventListener('click', () => {
     }
     else {
         inputWrapper.classList.add('error');
+    }
+}
+
+// New to do will be created when ADD button is clicked.
+addBtn.addEventListener('click', createList);
+
+// New todo will be created when ENTER key is pressed.
+newTodo.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        createList();
     }
 })
